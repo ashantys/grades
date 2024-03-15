@@ -20,8 +20,16 @@ class MateriaController extends Controller
 
     public function store(Request $request)
     {
-        Materia::create($request->validated());
-        return redirect()->route('materias.index');
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        $materia = new Materia();
+        $materia->nombre = $request->nombre;
+
+        $materia->save();
+
+        return redirect()->route('materias.index')->with('success', 'Materia creada exitosamente');
     }
 
     public function edit(Materia $materia)
@@ -31,7 +39,7 @@ class MateriaController extends Controller
 
     public function update(Request $request, Materia $materia)
     {
-        $materia->update($request->validated());
+        $materia->update($request->validate());
         return redirect()->route('materias.index');
     }
 

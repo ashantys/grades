@@ -7,9 +7,9 @@
             @csrf
             <div class="mb-4">
                 <label for="nombre" class="block text-gray-700 font-bold mb-2">Nombre de la Materia</label>
-                <input type="text" name="nombre" id="nombre" class="border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-lg w-full">
+                <input type="text" name="nombre" id="nombre" class="border-gray-300 shadow-md h-10 ring-0 focus:border-cyan-500 focus:ring focus:ring-cyan-200 rounded-lg w-full">
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Guardar Materia</button>
+            <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded">Guardar Materia</button>
         </form>
     </div>
 @endsection

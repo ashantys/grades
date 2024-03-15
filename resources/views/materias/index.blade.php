@@ -9,7 +9,7 @@
         </div>
 
         <div class="bg-white shadow-md rounded-lg overflow-hidden m-10">
-            <table class="w-auto">
+            <table class="w-full">
                 <thead>
                     <tr class="bg-gray-200">
                         <th class="text-left py-2 px-4">Nombre</th>
