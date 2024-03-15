@@ -38,15 +38,22 @@ class MateriaController extends Controller
         return view('materias.edit', compact('materia'));
     }
 
-    public function update(Request $request, Materia $materia)
+    public function update(Request $request, $id)
     {
-        $materia->update($request->validate());
-        return redirect()->route('materias.index');
+        $validatedData = $request->validate([
+            'nombre' => 'required|string|max:255',
+        ]);
+
+        Materia::whereId($id)->update($validatedData);
+
+        return redirect()->route('materias.index')->with('success', 'Materia actualizado correctamente.');
     }
 
-    public function destroy(Materia $materia)
+    public function destroy($id)
     {
+        $materia = Materia::findOrFail($id);
         $materia->delete();
-        return redirect()->route('materias.index');
+
+        return redirect()->route('materias.index')->with('success', 'Materia eliminada correctamente.');
     }
 }
