@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('actividads', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('materia_id');
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
+            $table->string('tipo');
+            $table->float('calificacion')->nullable();
+            $table->date('fecha');
             $table->timestamps();
         });
     }
