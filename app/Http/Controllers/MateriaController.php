@@ -32,8 +32,9 @@ class MateriaController extends Controller
         return redirect()->route('materias.index')->with('success', 'Materia creada exitosamente');
     }
 
-    public function edit(Materia $materia)
+    public function edit($id)
     {
+        $materia = Materia::findOrFail($id);
         return view('materias.edit', compact('materia'));
     }
 
