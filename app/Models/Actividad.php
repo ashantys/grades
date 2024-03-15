@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Actividad extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['tipo', 'calificacion', 'fecha'];
+
+    public function materia()
+    {
+        return $this->belongsTo(Materia::class);
+    }
 }
