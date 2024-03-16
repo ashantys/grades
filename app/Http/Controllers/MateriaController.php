@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Actividad;
 use App\Models\Materia;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,14 @@ class MateriaController extends Controller
     public function create()
     {
         return view('materias.create');
+    }
+
+    public function show($id)
+    {
+        // Obtén todas las actividades de la materia con el id específico
+        $actividades = Actividad::where('materia_id', $id)->get();
+
+        return view('materias.show', compact('actividades'));
     }
 
     public function store(Request $request)
