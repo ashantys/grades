@@ -23,8 +23,9 @@ class MateriaController extends Controller
     {
         // Obtén todas las actividades de la materia con el id específico
         $actividades = Actividad::where('materia_id', $id)->get();
+        $materia = $id;
 
-        return view('materias.show', compact('actividades'));
+        return view('materias.show', compact('actividades', 'materia'));
     }
 
     public function store(Request $request)

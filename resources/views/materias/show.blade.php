@@ -3,7 +3,10 @@
 @section('content')
     <div class="container mx-auto py-6">
         <h1 class="text-2xl font-semibold mb-6">Lista de Actividades</h1>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+
+        <a href="{{ route('actividad.create', $materia) }}"  class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded m-4">Agregar Nueva Actividad</a>
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden m-10">
             <table class="w-full">
                 <thead>
                     <tr class="bg-gray-200">

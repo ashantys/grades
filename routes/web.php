@@ -27,9 +27,17 @@ Route::put('/update/{id}', [MateriaController::class, 'update'])->name('materias
 //Ruta para eliminar una materia en específico
 Route::delete('/materias/{id}', [MateriaController::class, 'destroy'])->name('materias.destroy');
 
+/* ACTIVIDAD */
+
 //Ruta para eliminar una actividad en específico
 Route::delete('/actividades/{id}', [ActividadController::class, 'destroy'])->name('actividades.destroy');
 
-/* ACTIVIDAD */
+// Ruta para mostrar el formulario de creación
+Route::get('/create', [ActividadController::class, 'create'])->name('actividad.create');
+
+// Ruta para almacenar (store) los datos enviados desde el formulario de creación
+Route::post('/store', [ActividadController::class, 'store'])->name('actividad.store');
+
+
 
 
