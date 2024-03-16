@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\MateriaController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,9 @@ Route::put('/update/{id}', [MateriaController::class, 'update'])->name('materias
 
 //Ruta para eliminar una materia en específico
 Route::delete('/materias/{id}', [MateriaController::class, 'destroy'])->name('materias.destroy');
+
+//Ruta para eliminar una actividad en específico
+Route::delete('/actividades/{id}', [ActividadController::class, 'destroy'])->name('actividades.destroy');
 
 /* ACTIVIDAD */
 

@@ -19,9 +19,9 @@
                 <tbody>
                     @foreach($materias as $materia)
                         <tr>
-                            <td class="py-2 px-4"><a href="/show/{{$materia->id}}">{{ $materia->nombre }}</a></td>
+                            <td class="py-2 px-4"><a href="{{ route('materias.edit', $materia->id) }}">{{ $materia->nombre }}</a></td>
                             <td class="py-2 px-4">
-                                <a href="{{ route('materias.edit', $materia->id) }}" class="text-cyan-500 hover:text-cyan-700">Editar</a>
+                                <a href="/show/{{$materia->id}}" class="text-cyan-500 hover:text-cyan-700">Ver Tareas</a>
                                 <a href="{{ route('materias.show', $materia->id) }}"  class="text-cyan-500 hover:text-cyan-700 inline-flex items-center"></a>
                                 <form action="{{ route('materias.destroy', $materia->id) }}" method="POST" class="inline">
                                     @csrf

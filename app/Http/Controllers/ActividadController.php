@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class ActividadController extends Controller
 {
-    public function index()
-    {
-        $actividades = Actividad::latest()->get();
-        return view('actividades.index', compact('actividades'));
-    }
 
     public function create()
     {
@@ -62,9 +57,9 @@ class ActividadController extends Controller
         return redirect()->route('actividades.index')->with('success', 'Actividad actualizada exitosamente');
     }
 
-    public function destroy(Actividad $actividad)
+    public function destroy($id)
     {
-        $actividad->delete();
-        return redirect()->route('actividades.index')->with('sucess', 'Actividad eliminada existosamente');
+        Actividad::destroy($id);
+        return redirect()->route('materias.index')->with('sucess', 'Actividad eliminada existosamente');
     }
 }
