@@ -3,11 +3,14 @@
 @section('content')
     <div class="container mx-auto py-6">
         <h1 class="text-2xl font-semibold mb-6">Agregar Nueva Actividad</h1>
-        <form action="{{ route('actividad.store') }}" method="POST" class="max-w-lg">
+        <form action="{{ route('actividades.store') }}" method="POST" class="max-w-lg">
             @csrf
             <div class="mb-4">
                 <label for="tipo" class="block text-gray-700 font-bold mb-2">Tipo de Actividad</label>
                 <input type="text" name="tipo" id="tipo" class="border-gray-300 focus:border-cyan-500 focus:ring focus:ring-cyan-200 rounded-lg w-full">
+            </div>
+            <div class="mb-4">
+                <input type="hidden" name="materia_id" id="materia_id" class="border-gray-300 focus:border-cyan-500 focus:ring focus:ring-cyan-200 rounded-lg w-full" value="{{$materia}}">
             </div>
             <div class="mb-4">
                 <label for="calificacion" class="block text-gray-700 font-bold mb-2">Calificación</label>

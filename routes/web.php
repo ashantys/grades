@@ -33,10 +33,11 @@ Route::delete('/materias/{id}', [MateriaController::class, 'destroy'])->name('ma
 Route::delete('/actividades/{id}', [ActividadController::class, 'destroy'])->name('actividades.destroy');
 
 // Ruta para mostrar el formulario de creación
-Route::get('/create', [ActividadController::class, 'create'])->name('actividad.create');
+Route::get('/actividades/create/{id}', [ActividadController::class, 'create'])->name('actividad.create');
 
 // Ruta para almacenar (store) los datos enviados desde el formulario de creación
-Route::post('/store', [ActividadController::class, 'store'])->name('actividad.store');
+Route::post('/actividades/store', [ActividadController::class, 'store'])->name('actividades.store');
+
 
 
 

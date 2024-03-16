@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class ActividadController extends Controller
 {
 
-    public function create()
+    public function create($id)
     {
-        return view('actividades.create');
+        $materia = $id;
+        return view('actividades.create', compact('materia'));
     }
 
     public function store(Request $request)
@@ -30,7 +31,7 @@ class ActividadController extends Controller
         
         $actividad->save();
     
-        return redirect()->route('actividades.index')->with('success', 'Actividad creada exitosamente');
+        return redirect()->route('materias.index')->with('success', 'Actividad creada exitosamente');
     }
 
     public function edit(Actividad $actividad)
