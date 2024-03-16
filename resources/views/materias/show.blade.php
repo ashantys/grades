@@ -23,7 +23,7 @@
                             <td class="py-2 px-4">{{ $actividad->calificacion }}</td>
                             <td class="py-2 px-4">{{ $actividad->fecha }}</td>
                             <td class="py-2 px-4">
-                                <a href="{{ route('actividades.store', $actividad->id) }}"  class="text-cyan-500 hover:text-cyan-700 inline-flex items-center">Editar</a>
+                                <a href="{{ route('actividades.edit', $actividad->id) }}"  class="text-cyan-500 hover:text-cyan-700 inline-flex items-center">Editar</a>
                                 <form action="{{ route('actividades.destroy', $actividad->id) }}" method="POST" class="inline">
                                     @csrf
                                     @method('DELETE')

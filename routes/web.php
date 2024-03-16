@@ -38,6 +38,12 @@ Route::get('/actividades/create/{id}', [ActividadController::class, 'create'])->
 // Ruta para almacenar (store) los datos enviados desde el formulario de creación
 Route::post('/actividades/store', [ActividadController::class, 'store'])->name('actividades.store');
 
+// Ruta para mostrar el formulario de edición de una materia específico
+Route::get('/actividades/edit/{id}', [ActividadController::class, 'edit'])->name('actividades.edit');
+
+// Ruta para actualizar una materia específico
+Route::put('/actividades/update/{id}', [ActividadController::class, 'update'])->name('actividades.update');
+
 
 
 

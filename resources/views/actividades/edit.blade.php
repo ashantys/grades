@@ -10,6 +10,7 @@
                 <label for="tipo" class="block text-gray-700 font-bold mb-2">Tipo de Actividad</label>
                 <input type="text" name="tipo" id="tipo" value="{{ $actividad->tipo }}" class="border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-lg w-full">
             </div>
+            
             <div class="mb-4">
                 <label for="calificacion" class="block text-gray-700 font-bold mb-2">Calificación</label>
                 <input type="number" name="calificacion" id="calificacion" value="{{ $actividad->calificacion }}" class="border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-lg w-full">

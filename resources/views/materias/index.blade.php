@@ -8,6 +8,12 @@
             <a href="{{ route('materias.create') }}" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded m-4">Agregar Materia</a>
         </div>
 
+        @if (session('success'))
+            <div class="mt-5">
+                <p class="text-xl">{{ session('success') }}</p>
+            </div>
+        @endif
+
         <div class="bg-white shadow-md rounded-lg overflow-hidden m-10">
             <table class="w-full">
                 <thead>
